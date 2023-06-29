@@ -1,5 +1,5 @@
 import app from './app'
-const cors = require('cors')
+import cors from 'cors'
 const PORT = process.env.PORT
 
 app.listen(() => console.log(`🚀 Server running`))
