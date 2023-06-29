@@ -1,15 +1,7 @@
-import { PrismaClient } from '@prisma/client'
+import app from './app'
 import cors from 'cors'
-import express from 'express'
+const PORT = process.env.PORT
+let port = PORT === undefined ? 3000 : PORT
 
-const prisma = new PrismaClient()
-const app = express()
-
-app.use(express.json())
+app.listen(PORT || 3000, () => console.log(`🚀 Server running on port ${port}`))
 app.use(cors())
-
-const server = app.listen(3001, () =>
-  console.log(
-    '🚀 Server ready at: http://localhost:3001',
-  ),
-)

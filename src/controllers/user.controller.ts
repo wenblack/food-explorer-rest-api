@@ -31,7 +31,7 @@ class UserController {
       }
     })
 
-    res.status(StatusCodes.OK).json({ newUser })
+    res.status(StatusCodes.CREATED).json({ message: `Usuário ${newUser.email} criado` })
   }
 }
 
